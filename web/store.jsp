@@ -48,7 +48,7 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nosh"
             ResultSet rs = stm.executeQuery("select * from user where email=\'"+email+ "\' and password= \'"+pass+"\'");
             if(!rs.next())
             {
-                    RequestDispatcher rd= request.getRequestDispatcher("index.jsp");
+                    RequestDispatcher rd= request.getRequestDispatcher("login.jsp");
                       rd.include(request,response);
                       
                        out.print("<html>");

@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -68,25 +69,34 @@ public class accept extends HttpServlet {
       int  y=  stmt.executeUpdate(Query2);
         if(x>0 && y>0 && z>0)
         {
-              
-                    out.println("<meta http-equiv='refresh' content='3;URL=index.jsp'>");
-                    out.println("<p >Congratulation your book has shared</p>");
+                 RequestDispatcher rd= request.getRequestDispatcher("orders.jsp");
+                      rd.include(request,response);
+                       out.print("<html>");
+                    out.println("<script>");
+                    out.println("alert('Congratulation your book has shared')");
+                        out.println("</script>");
                     out.print("</html>");  
         }
         
       }
       else
       {
-           String orderquery1=" update `ordertable` SET orderstatus ='DENIED' , sremark='"+request.getParameter("remark") +"' WHERE orderid = '"+orderid+"' ";  
+           String orderquery1=" update `ordertable` SET orderstatus = 'DENIED' , sremark='"+request.getParameter("remark") +"' WHERE orderid = '"+orderid+"' ";  
       String Query1="update book set status='AVAILABLE' where bookid='"+ hs.getAttribute("currentbook").toString()+"' ";
       
          int x=  stmt.executeUpdate(orderquery1);
       int  y=  stmt.executeUpdate(Query1);
       if(x>0 && y>0)
       {
-     out.println("<meta http-equiv='refresh' content='1;URL=index.jsp'>");
-                    out.println("<p >Denied</p>");
-                    out.print("</html>");  
+          
+              RequestDispatcher rd= request.getRequestDispatcher("orders.jsp");
+                      rd.include(request,response);
+                       out.print("<html>");
+                    out.println("<script>");
+                    out.println("alert('Denied Successfully')");
+                        out.println("</script>");
+                    out.print("</html>"); 
+     
       }
       
       

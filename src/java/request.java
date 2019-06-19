@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -56,11 +57,25 @@ public class request extends HttpServlet {
                         
                         if(x>0 && y>0)
                         {
-                            out.print("<h1>requested Successfully</h1>");
-                            out.println("<meta http-equiv='refresh' content='1;URL=homepage.jsp'>");
+                            RequestDispatcher rd= request.getRequestDispatcher("requested.jsp");
+                      rd.include(request,response);
+       
+                       out.print("<html>");
+                    out.println("<script>");
+                    out.println("alert('Book requested Successfully')");
+                        out.println("</script>");
+                    out.print("</html>");
                         }
-                        else
-                            out.print("<h1> Something went wrong</h1>");
+                        else{
+                             RequestDispatcher rd= request.getRequestDispatcher("index.jsp");
+                      rd.include(request,response);
+       
+                       out.print("<html>");
+                    out.println("<script>");
+                    out.println("alert('Book requesting unsuccessfull')");
+                        out.println("</script>");
+                    out.print("</html>");
+                        }
             
             } catch (SQLException ex) {
                 Logger.getLogger(request.class.getName()).log(Level.SEVERE, null, ex);
