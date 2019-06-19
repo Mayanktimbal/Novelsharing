@@ -22,14 +22,28 @@
  ResultSet rs3= stm3.executeQuery("select * from `ordertable` where orderid='"+ orderid+"'");
  if(rs3.next())
  {
+     
+   //if order is running and user is sharer  
+     
 if(rs3.getString("orderstatus").equalsIgnoreCase("ACCEPTED"))   
 {
-out.println("Running order");
-if(rs3.getString("sid").equalsIgnoreCase(session.getAttribute("uid").toString()))
+out.println("Your Running order");
+
+if(rs3.getString("sid").equalsIgnoreCase(session.getAttribute("userid").toString()))
 {
+     Statement stm4 = conn.createStatement();
+ ResultSet buyerdetails= stm4.executeQuery("select * from user where userid='"+ rs3.getString("reqid")+"'");
+     Statement stm5 = conn.createStatement();
+ ResultSet buyerbookdetails= stm5.executeQuery("select * from book where userid='"+ buyerdetails.getString("userid")+"'");
+    
     out.println("You are sharer");
-out.println("<a href='https://api.whatsapp.com/send?phone=919924038319&text=Hey! Please schedule a call.'> jhzkj</a>");
+    if(buyerdetails.next())
+    {
+out.println("<a href='https://api.whatsapp.com/send?phone=91"+buyerdetails.getString("mobile")+"&text=Hey! I am sharer i need  help with "+buyerbookdetails.getString("bookname") +" '>contact requester </a>");
 }
+
+}
+
 
 }
  }
