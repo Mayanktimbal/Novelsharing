@@ -15,7 +15,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/homepage.css"/>
          <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Navigation.css">
-            <title>Homepage</title>
+           
+<title>Homepage</title>
+          
     </head>
     <body>
         
@@ -56,7 +58,10 @@ else
             }
             %>
             <h1>Available Category</h1> 
-            <ul class="x">
+            
+            
+           
+            <ul class="mainNav">
               <li><a href="categorybookshow.jsp?category=LOVE">Love</a></li>
               <li><a href="categorybookshow.jsp?category=KIDS">Kids</a></li>
               <li><a href="categorybookshow.jsp?category=ADVENTURE">Adventure</a></li>

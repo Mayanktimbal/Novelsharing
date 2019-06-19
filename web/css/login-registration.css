@@ -1,0 +1,228 @@
+#bxLoginRegistrationModal {
+    width: 600px;
+    -webkit-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+#bxLoginRegistrationModal .close {
+    top: 6px;
+    right: 6px;
+}
+
+#bxLoginRegistrationModal .tab-pane {
+    padding: 10px;
+}
+
+#bxLoginRegistrationModal .nav-tabs {
+    height: auto; 
+    overflow-y: hidden; 
+}
+
+#bxLoginRegistrationModal .nav-tabs .tab-icon:before {
+    background: transparent url('/img/icons/socialIcons-loginRegistration.png') no-repeat 0 0;
+}
+
+#bxLoginRegistrationModal .nav-tabs .tab-icon.facebook-icon:before {
+    background-position: -20px 0;
+}
+
+#bxLoginRegistrationModal .nav-tabs .tab-icon.twitter-icon:before {
+    background-position: -40px 0;
+}
+
+#bxLoginRegistrationModal .nav-tabs .tab-icon.google-icon:before {
+    background-position: -60px 0;
+}
+
+#bxLoginRegistrationModal .social button {
+    margin-left: 29px;
+    -webkit-border-radius: 0 6px 6px 0;
+    -o-border-radius: 0 6px 6px 0;
+    -ms-border-radius: 0 6px 6px 0;
+    -moz-border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 6px 0;
+}
+#bxLoginRegistrationModal .social button{
+    padding-top: 6px;
+}
+
+#bxLoginRegistrationModal .social button:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -29px;
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    background: transparent url('/img/icons/socialIcons-loginRegistration.png') no-repeat 0 -21px;
+}
+
+#bxLoginRegistrationModal .social button#twitterLoginButton:before,
+#bxLoginRegistrationModal .social button#twitterRegistrationButton:before {
+    background-position: -30px -21px;
+    margin-left: -1px;
+}
+
+#bxLoginRegistrationModal .social button#googleLoginButton:before,
+#bxLoginRegistrationModal .social button#googleRegistrationButton:before {
+    background-position: -60px -21px;
+}
+
+#bxLoginRegistrationModal .alert {
+    margin: 5px 0 -5px;
+}
+
+#bxLoginRegistrationModal .popover {
+    width: 320px;
+}
+
+#bxLoginRegistrationModal .popover big {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#bxLoginRegistrationModal .popover p {
+    line-height: 1.2em;
+    margin: 8px 0 0;
+}
+
+#bxLoginRegistrationModal p {
+    margin: 10px 0 0;
+}
+
+#bxLoginRegistrationModal .column,
+#bxLoginRegistrationModal .social.column {
+    float: left;
+    padding: 15px 9px 15px 0;
+}
+
+#bxLoginRegistrationModal .social.column {
+    padding: 15px 10px 0 0;
+}
+
+#bxLoginRegistrationModal #bxLoginForm .column.last,
+#bxLoginRegistrationModal #bxUsernameLoginForm .column.last {
+    float: right;
+    padding: 35px 0 0;
+}
+
+#bxLoginRegistrationModal .social.column.last {
+    float: right;
+    padding: 20px 0 0;
+}
+
+#bxLoginRegistrationModal #bxLoginForm .column.last .button,
+#bxLoginRegistrationModal #bxUsernameLoginForm .column.last .button {
+    width: 132px;
+}
+
+#bxLoginRegistrationModal #twitter-email-verification .column, 
+#bxLoginRegistrationModal #bxForgotPassForm .column {
+    width: 220px;
+    padding-bottom: 8px;
+}
+
+#bxLoginRegistrationModal #twitter-email-verification .column.last, 
+#bxLoginRegistrationModal #bxForgotPassForm .column.last {
+    padding: 35px 0 0;
+}
+
+#bxLoginRegistrationModal #twitter-email-verification .column.last .button, 
+#bxLoginRegistrationModal #bxForgotPassForm .column.last .button {
+    width: 190px;
+}
+
+#bxLoginRegistrationModal #twitter-email-verification p.clear, 
+#bxLoginRegistrationModal #bxForgotPassForm p.clear {
+    padding: 0 0 15px;
+}
+
+#bxLoginRegistrationModal .row input[type=text],
+#bxLoginRegistrationModal .row input[type=password], 
+#bxLoginRegistrationModal .row input[type=email],
+#bxLoginRegistrationModal .column input[type=text],
+#bxLoginRegistrationModal .column input[type=password],
+#bxLoginRegistrationModal .column input[type=email] {
+    width: 200px;
+}
+
+#bxLoginRegistrationModal .row label, 
+#bxLoginRegistrationModal .column label {
+    display: block;
+    padding: 5px 0;
+}
+
+#bxLoginRegistrationModal .column #bxForgotPassword,
+#bxLoginRegistrationModal .column #bxForgotPassword2 {
+    display: inline-block;
+    padding: 5px 0;
+}
+
+#bxLoginRegistrationModal .row {
+    width: 240px;
+    margin: 10px 0;
+}
+
+#bxLoginRegistrationModal .row.checkbox  input {
+    clear: both;
+    float: left;    
+    margin: 5px 5px 0 0;
+}
+
+#bxLoginRegistrationModal .column .row.checkbox {
+    margin-top: 0;
+}
+
+
+#bxLoginRegistrationModal .row.checkbox  label {
+    overflow: hidden;
+}
+
+#bxLoginRegistrationModal .popover-content {
+    padding: 8px 10px;
+}
+
+#bxRegistrationForm .column {
+    padding: 0;
+    float: left;
+}
+
+#bxRegistrationForm .column.last {   
+    width: 240px;
+    float: right;
+    padding: 14px 0;
+}
+
+#bxRegistrationForm button[type=submit] {
+    width: 210px;
+    margin-left: 130px;
+}
+
+#bxLoginRegistrationModal .hidden {
+    z-index: 0;
+    visibility: hidden;
+}
+
+#bxLoginRegistrationModal div.footy {
+    margin: 10px 0 10px 0;
+}
+
+@media only screen and (max-width: 700px) {
+    #bxLoginRegistrationModal{
+        width: 500px;   
+    }
+}
+@media only screen and (max-width: 500px) {
+    #bxLoginRegistrationModal{
+        width: 320px;
+    }
+}
