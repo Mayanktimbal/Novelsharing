@@ -57,7 +57,7 @@ public class request extends HttpServlet {
                         
                         if(x>0 && y>0)
                         {
-                            RequestDispatcher rd= request.getRequestDispatcher("requested.jsp");
+                            RequestDispatcher rd= request.getRequestDispatcher("myorder.jsp");
                       rd.include(request,response);
        
                        out.print("<html>");
