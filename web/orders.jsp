@@ -131,24 +131,26 @@ out.print("</tr>");
  //for requested by user and showing sharer book
  out.print( "<h5> requested orders </h5>");
             Statement stm5 = conn.createStatement();
-        ResultSet crequested= stm5.executeQuery("select * from `ordertable` where reqid=\""+ session.getAttribute("userid")+"\" and orderstatus='COMPLETED' ");    
+        ResultSet crequested= stm5.executeQuery("select * from `ordertable` where reqid=\""+ session.getAttribute("userid")+"\" and orderstatus='COMPLETED' or orderstatus='DENIED' ");    
        if(!crequested.next())    
             out.print("<p>currently no completed order</p>");
        else{ 
-           crequested.first();
+               crequested.first();
+              out.println("<table id=\"books\" name=\"books\">"); 
+               out.println("<tr >"); 
+               out.print("<td> bookname</td> <td> images</td></tr>");
+    
        
        do
             {
+                
      Statement stm6 = conn.createStatement();
                 ResultSet rs6 = stm6.executeQuery("select * from book where bookid=\""+ crequested.getString("sbookid") +"\" ");
       
                 if(rs6.next())
                 {
                 
-               out.println("<table id=\"books\" name=\"books\">"); 
-               out.println("<tr >"); 
-               out.print("<td> bookname</td> <td> images</td></tr>");
-    
+             
           
            out.println("<tr>"); 
            
@@ -168,17 +170,18 @@ out.print("</tr>");
 
 out.print("</tr>");
    
-     out.print("</table>");      
+    
 }     
         }
        while(crequested.next());
+            out.print("</table>");  
        }
         
 
  //for shared by user and showing buyer bookid
  out.print( "<h5> shared orders </h5>");
          Statement stm7 = conn.createStatement();
-        ResultSet cshared= stm7.executeQuery("select * from `ordertable` where sid=\""+ session.getAttribute("userid")+"\" and orderstatus='COMPLETED' ");    
+        ResultSet cshared= stm7.executeQuery("select * from `ordertable` where sid=\""+ session.getAttribute("userid")+"\" and orderstatus='COMPLETED'  ");    
        if(!cshared.next())
            out.print("<p>currently no comleted order from your side </p>");
        else{
