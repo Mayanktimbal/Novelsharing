@@ -36,7 +36,7 @@ String usertableq= "CREATE TABLE IF NOT EXISTS nosh.user (username VARCHAR(100) 
 stm1.execute(usertableq);
 String booktableq= "CREATE TABLE IF NOT EXISTS nosh.book (  bookid VARCHAR(200) NOT NULL,  bookname VARCHAR(200) NULL,  author VARCHAR(200) NULL,  tpage VARCHAR(200) NULL, genre VARCHAR(200) NULL, publisher VARCHAR(200) NULL,  bcon VARCHAR(200) NULL, userid VARCHAR(200) NOT NULL, username VARCHAR(200) NOT NULL, eyear VARCHAR(200) NULL,  email VARCHAR(200) NOT NULL, mobileno VARCHAR(200) NULL, i1 BLOB NOT NULL,  i2 BLOB NOT NULL,status VARCHAR(500) DEFAULT\'AVAILABLE\',bid VARCHAR(500) NULL,bdesc VARCHAR(500) NOT NULL,language VARCHAR(500) NOT NULL,area VARCHAR(200) NULL ,PRIMARY KEY (bookid)); ";
 stm1.execute(booktableq); 
- String ordertableq= "CREATE TABLE IF NOT EXISTS nosh.ordertable (  orderid VARCHAR(200) NOT NULL,  sid VARCHAR(200) NULL,  reqid VARCHAR(200) NULL,  sbookid VARCHAR(200) NULL, reqbookid VARCHAR(200) NULL, odate TIMESTAMP NULL,rdate TIMESTAMP NULL,rdays VARCHAR(200) NULL,sremark VARCHAR(1000) NULL,orderstatus VARCHAR(200) NOT NULL DEFAULT 'REQUESTED' ,PRIMARY KEY (orderid)); ";
+ String ordertableq= "CREATE TABLE IF NOT EXISTS nosh.ordertable (  orderid VARCHAR(200) NOT NULL,  sid VARCHAR(200) NULL,  reqid VARCHAR(200) NULL,  sbookid VARCHAR(200) NULL, reqbookid VARCHAR(200) NULL, odate TIMESTAMP NULL,rdate TIMESTAMP NULL,rdays VARCHAR(200) NULL,sremark VARCHAR(6000) NULL,orderstatus VARCHAR(200) NOT NULL DEFAULT 'REQUESTED' ,PRIMARY KEY (orderid)); ";
   stm1.execute(ordertableq);               
                
  

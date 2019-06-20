@@ -98,7 +98,7 @@ out.print("</table>");
                 
                out.println("<table id=\"books\" name=\"books\">"); 
                out.println("<tr >"); 
-               out.print("<td> bookname</td> <td> images</td><td>Status</td></tr>");
+               out.print("<td> bookname</td> <td> images</td></tr>");
     
           
            out.println("<tr>"); 
@@ -115,7 +115,7 @@ out.print("</table>");
 
             String encode = Base64.getEncoder().encodeToString(imgData);
           out.print("<td> <img src=\"data:image/jpeg;base64,"+ encode +" \" height=\"100\" width=\"100\" /></td>");
-out.print("<td>"+rs4.getString("status")+"</td>");
+//out.print("<td>"+rs4.getString("status")+"</td>");
 
 out.print("</tr>");
  out.print("</table>");  
@@ -133,7 +133,7 @@ out.print("</tr>");
             Statement stm5 = conn.createStatement();
         ResultSet crequested= stm5.executeQuery("select * from `ordertable` where reqid=\""+ session.getAttribute("userid")+"\" and orderstatus='COMPLETED' ");    
        if(!crequested.next())    
-            out.print("<p>currently no compted order</p>");
+            out.print("<p>currently no completed order</p>");
        else{ 
            crequested.first();
        
@@ -147,7 +147,7 @@ out.print("</tr>");
                 
                out.println("<table id=\"books\" name=\"books\">"); 
                out.println("<tr >"); 
-               out.print("<td> bookname</td> <td> images</td><td>Status</td></tr>");
+               out.print("<td> bookname</td> <td> images</td></tr>");
     
           
            out.println("<tr>"); 
@@ -164,7 +164,7 @@ out.print("</tr>");
 
             String encode = Base64.getEncoder().encodeToString(imgData);
           out.print("<td> <img src=\"data:image/jpeg;base64,"+ encode +" \" height=\"100\" width=\"100\" /></td>");
-out.print("<td>"+rs6.getString("status")+"</td>");
+//out.print("<td>"+rs6.getString("status")+"</td>");
 
 out.print("</tr>");
    
@@ -193,7 +193,7 @@ out.print("</tr>");
                 
                out.println("<table id=\"books\" name=\"books\">"); 
                out.println("<tr >"); 
-               out.print("<td> bookname</td> <td> images</td><td>Status</td></tr>");
+               out.print("<td> bookname</td> <td> images</td></tr>");
     
           
            out.println("<tr>"); 
@@ -210,7 +210,7 @@ out.print("</tr>");
 
             String encode = Base64.getEncoder().encodeToString(imgData);
           out.print("<td> <img src=\"data:image/jpeg;base64,"+ encode +" \" height=\"100\" width=\"100\" /></td>");
-out.print("<td>"+rs8.getString("status")+"</td>");
+//out.print("<td>"+rs8.getString("status")+"</td>");
 
 out.print("</tr>");
    

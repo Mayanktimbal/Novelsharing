@@ -46,7 +46,9 @@ if(rs3.getString("sid").equalsIgnoreCase(session.getAttribute("userid").toString
  if(sharerbookdetails.next() && buyerdetails.next() )
  {
      out.print("Your "+sharerbookdetails.getString("bookname")+" in exchange with "+buyerdetails.getString("username")+"");
-     
+     out.print("<br>");
+     out.print(" "+rs3.getString("odate")+" ");
+    out.println("<br><br><br>");
  }
  //buyerdetails.first();
  
@@ -73,6 +75,12 @@ if(rs3.getString("sid").equalsIgnoreCase(session.getAttribute("userid").toString
     out.println("</td> </tr>"); 
      out.println("</table>");
     out.println("<br><a href='https://api.whatsapp.com/send?phone=91"+buyerdetails.getString("mobile")+"&text=Hey! I am sharer i need  help with "+buyerbookdetails.getString("bookname") +" '>contact requester </a>");
+       out.println("<form action='completed' method='post' >"); 
+     out.println("<input type='submit' value='completed'>Completed( means got your book back)</input>"); 
+       out.println("<input type='hidden' name='orderid' value="+orderid+" ></input>"); 
+            out.println("<input type='hidden' name='requesterbookid' value="+buyerbookdetails.getString("bookid")+" ></input>"); 
+      out.println("<input type='hidden' name='sharerbookid' value="+sharerbookdetails.getString("bookid")+" ></input>"); 
+            out.println("</form>"); 
     }
 
 }
@@ -92,7 +100,9 @@ else {
  if(buyersbookdetails.next() && sharerdetails.next())
  {
      out.print("Your "+buyersbookdetails.getString("bookname")+" in exchange with "+sharerdetails.getString("username")+"");
-     
+     out.print("<br>");
+     out.print(" "+rs3.getString("odate")+" ");
+    out.println("<br><br><br>");
  
  }
  
@@ -122,7 +132,8 @@ else {
     
     out.println(sharerbookdetails.getString("bookname")+"<br>");    
 out.println("<a href='https://api.whatsapp.com/send?phone=91"+sharerdetails.getString("mobile")+"&text=Hey! I am sharer i need  help with "+sharerbookdetails.getString("bookname") +" '>contact requester </a>");
-}
+
+    }
 
 }
 

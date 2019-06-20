@@ -28,7 +28,7 @@
                  Class.forName("com.mysql.jdbc.Driver");
                  Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nosh","root","");
                  Statement stm = conn.createStatement();
-                 ResultSet rs= stm.executeQuery("select * from book where bid=\""+ session.getAttribute("userid")+"\" ");
+                 ResultSet rs= stm.executeQuery("select * from book where bid=\""+ session.getAttribute("userid")+"\" and status='WAITING' ");
       
   int x=0;
                     if(rs.last())
@@ -72,7 +72,8 @@
           if(rs.getString("status").equalsIgnoreCase("WAITING"))
           { out.print("<td>WAITING FOR SHARER CONFIRMATION</td>");}
           else
-          {out.print("<td> SHARER HAS DENIED YOUR REQUEST,FOR MOR INFO GO TO MYORDERS</td>");
+          {
+  out.print("<td> SHARER HAS DENIED YOUR REQUEST,FOR MORE INFO GO TO MYORDERS</td>");
           }
 out.print("</tr>");
    
