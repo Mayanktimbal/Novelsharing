@@ -10,31 +10,85 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/homepage.css"/>
-         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Navigation.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+         <link href="${pageContext.request.contextPath}/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="${pageContext.request.contextPath}/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+  
+    <link href="${pageContext.request.contextPath}/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+  
+   
+    <link href="${pageContext.request.contextPath}/css/signup.css" rel="stylesheet" media="all">
         <title>signup Page</title>
        
     </head>
     
-    <body bgcolor="cyan">
- 
-    
-        <h1> Novel Sharing </h1>
-        
-        <form name="signup" id="signup" method="post" action="signup1" onsubmit="return validate()"  >
-<br><br><br>
-<input type="text" NAME="uname"  placeholder=" Enter Your Username" width="30"   pattern="[A-Za-z0-9]{1,20}" ><br><br> 
-<input type="email" NAME="email"  placeholder=" Email" <br><br> <br>
-<input type="password" id="pass" NAME="pass" placeholder=" Password" required ><br><br> 
-<input type="password" id="pass2" NAME="pass2"  placeholder=" Confirm password" required>
-   <p id="pappu">  </p>
-   <br><br> 
-  
    
-	
- <img src="whatapp.jpeg" style="width:50px; height:50px;" ><span>+91</span> <input    style="width: 300px;margin-left: 0px;" type="tel" pattern="^\d{10}$" name="number"  placeholder=" What's app number" required></div><br>
- <div><table ><tr><td>Select area:</h3></td><td><select class="row" id="areamenu" name="area">
-
+<body>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Registration Form</h2>
+                    <form method="POST" name="signup" id="signup" method="post" action="signup1" onsubmit="return validate()" >
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">user name</label>
+                                    <input class="input--style-4" type="text" NAME="uname"  placeholder=" Enter Your Username" width="30"   pattern="[A-Za-z0-9]{1,20}">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                          <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Email</label>
+                                    <input class="input--style-4"  type="email" NAME="email"  placeholder=" Email">
+                                </div>
+                            </div>
+                        
+                          </div>
+                        
+                        
+                           <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Password</label>
+                                    <input class="input--style-4" type="password" id="pass" NAME="pass" placeholder=" Password" required>
+                                </div>
+                            </div>
+                        
+                          </div>
+                        
+                        
+                          <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Confirm Password</label>
+                                    <input class="input--style-4" type="password" id="pass2" NAME="pass2"  placeholder=" Confirm password" required>
+                                </div>
+                            </div>
+                        
+                          </div>
+                        
+                        
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" type="tel" pattern="\d{10}$" name="number" >
+                                </div>
+                            </div>
+                       
+                        <div class="input-group">
+                            <label class="label">Area</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                   <p id="pappu">  </p>
+                                <select name="area" id="areamenu" >
+                                   
  <%
      Class.forName("com.mysql.jdbc.Driver");
      Connection  conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306","root","");
@@ -57,29 +111,41 @@ while(rs.next())
 }
      
      %>
-     
-     </select>
-             </td>
-         </tr>
-         <tr>
-                <td>Address:</td>
-             <td>
-         <textarea id="signup" name="address" id="address"></textarea>
-             </td>
-          
-         </tr>
-     </table>
- </div>
-</div>
-<br>
-<button name="submit" style="width:100px; height:50px;" >submit</button>
-<script type="text/javascript" src="${pageContext.request.contextPath}/match.js"> </script>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                               <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Address</label>
+                                  
+                                     <textarea class="input--style-4" id="signup" name="address" id="address"></textarea>
+                                </div>
+                            </div>
+                        
+                          </div> 
+                                
+                                
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="${pageContext.request.contextPath}/javascript/match.js"> </script>
+    <!-- Jquery JS-->
+    <script src="${pageContext.request.contextPath}/vendor/jquery/jquery.min.js"></script>
+   
+    <script src="${pageContext.request.contextPath}/vendor/select2/select2.min.js"></script>
+   
+   
+
   
-</form> 
-<script>
-    
-    
-    
-</script>
+    <script src="${pageContext.request.contextPath}/js/global.js"></script>
+
+
     </body>
 </html>

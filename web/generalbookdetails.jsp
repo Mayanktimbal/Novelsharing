@@ -7,10 +7,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/homepage.css"/>
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Navigation.css">
+      
         <title>Book details</title>
-                 <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/homepage.css"/>
+               
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Navigation.css">
    
     </head>
@@ -81,6 +80,10 @@
             out.print("</tr>");
             out.print("<tr>");
             out.print("<td>");
+            
+             out.print("</td></tr>");
+                out.print("</table>");
+                
             String bstatus=rs.getString("status").toString();
             if(session.getAttribute("uname")==null)
             {
@@ -99,13 +102,12 @@
                  out.print(" <form method=\"POST\" action=\"request\"> ");
               out.print("<input type=\"hidden\" name=\"bid\" value=\""+bid+"\" /> ");
                out.print("For how many days you want? :");
-         out.print("<input type=\"text\" name=\"rdays\" /> ");
-            out.print("<button type=\"submit\" style=\"height:50px; width:100px \" >Request Book</button></form>");
+         out.print("<input type=\"text\" name=\"rdays\" />");
+            out.print("<button type=\"submit\" style=\"height:50px; width:50px \" >Request Book</button></form>");
             }
             }
             
-            out.print("</td></tr>");
-                out.print("</table>");
+           
           }
 
             %>

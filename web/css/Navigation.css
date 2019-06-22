@@ -1,43 +1,42 @@
+body {margin:0;}
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.navbar {
   overflow: hidden;
-  background-color: #00ddbc;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-right: -80px;
+  position: static;
 }
 
-li {
-  float:right;
+.navbar a {
+  float: left;
   display: block;
-  color: white;
-  font-size: 50px;
+  color: #f2f2f2;
   text-align: center;
-  padding: 16px;
+  padding: 14px 16px;
+ 
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
   text-decoration: none;
 }
 
-li:hover{
-
- color:#00ddbc;
-
-background-color:white;
-}
-
-li a {
-  display: block;
-  color: white;
-  font-size: 50px;
-  text-align: center;
+.main {
   padding: 16px;
-  text-decoration: none;
+  margin-top: 30px;
+  height: 100px; /* Used in this example to enable scrolling */
 }
-
-li a:hover {
-  color:#00ddbc;
-
-background-color:white;
+.element{
+    padding-left: 142px;
 }
-
-
-
+.col-md-6 {
+    margin-left: -25px;
+}
+.col-md-5{
+    margin-right: -20px;
+}

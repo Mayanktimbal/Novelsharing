@@ -12,8 +12,8 @@
     <head>
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/homepage.css"/>
-         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Navigation.css">
-    
+       
+           
         <title>Books</title>
     </head>
     <body>
@@ -49,18 +49,14 @@
                out.println("<table id=\"books\" name=\"books\">"); 
            
                
-                    out.println("<tr >"); 
-             out.print("<td> bookname</td> <td> images</td><td>Status</td></tr>");
+        
             
              
              
        
             do
             {
-           out.println("<tr>"); 
-           
-             String url= "generalbookdetails.jsp"+"?bookid="+rs.getString("bookid") ;
-             out.print("<td><a href=\" "+ url + "\">"+rs.getString("bookname")+"</td>");
+          
              Blob blob = rs.getBlob("i1");
              byte[ ] imgData = null ;
              imgData = blob.getBytes(1,(int)blob.length());
@@ -69,17 +65,25 @@
            
 
           String encode = Base64.getEncoder().encodeToString(imgData);
-          out.print("<td> <img src=\"data:image/jpeg;base64,"+ encode +" \" height=\"100\" width=\"100\" /></td>");
-          out.print("<td>"+rs.getString("status")+"</td>");
-          out.print("</tr>");
+          
+          out.println("<tr>"); 
+          out.print("<td rowspan='3'> <img src=\"data:image/jpeg;base64,"+ encode +" \" height=\"100\" width=\"100\" /></td>");
+             String url= "generalbookdetails.jsp"+"?bookid="+rs.getString("bookid") ;
+ 
+          out.print("<td ><a href=\" "+ url + "\">"+rs.getString("bookname")+"</td><td> by "+rs.getString("author")+"</td>");
+             out.print("</tr>");
+             
+                  out.print("   <tr><td>"+rs.getString("bdesc")+"</td></tr><tr></tr>");
+          
    
 
 }while(rs.next());
  
-         
             
             }
         
         %>
+        
+       
     </body>
 </html>
