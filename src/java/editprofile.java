@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,20 +39,39 @@ public class editprofile extends HttpServlet {
            String uid= session.getAttribute("userid").toString();
             
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nosh","root","");
-            Statement stm = conn.createStatement();
+           ServletContext sc= request.getServletContext();
+          Connection conn = DriverManager.getConnection(sc.getInitParameter("dbrootpath")+"/"+sc.getInitParameter("dbname"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
+           
+        Statement stm = conn.createStatement();
             int x = stm.executeUpdate("update user set address=\'"+request.getParameter("address")+"\', area=\'"+request.getParameter("area")+"\'  where userid =\'" +uid+ "\'");
             int y=stm.executeUpdate("update book set  area=\'"+request.getParameter("area")+"\'  where userid =\'" +uid+ "\'");
             if(x>0 || y>0)
-            {  out.print("<h1>Updated Successfully</h1>");
-            session.setAttribute("address",request.getParameter("address") );
+            { 
+                 RequestDispatcher rd= request.getRequestDispatcher("profile.jsp");
+                      rd.include(request,response);
+         session.setAttribute("address",request.getParameter("address") );
              session.setAttribute("area",request.getParameter("area") );
-             System.out.println("gffg");
-            out.println("<meta http-equiv='refresh' content='1;URL=homepage.jsp'>");        
+                       out.print("<html>");
+                    out.println("<script>");
+                    out.println("alert('Updated Successfully')");
+                        out.println("</script>");
+                    out.print("</html>");
+                
+             
             }
-            else
-                out.print("<h1> Something went wrong</h1>");
-        } catch (ClassNotFoundException ex) {
+            else{
+         
+                       RequestDispatcher rd= request.getRequestDispatcher("editprofile.jsp");
+                      rd.include(request,response);
+         session.setAttribute("address",request.getParameter("address") );
+             session.setAttribute("area",request.getParameter("area") );
+                       out.print("<html>");
+                    out.println("<script>");
+                    out.println("alert('Something went wrong')");
+                        out.println("</script>");
+                    out.print("</html>");
+            }
+            } catch (ClassNotFoundException ex) {
             Logger.getLogger(editprofile.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(editprofile.class.getName()).log(Level.SEVERE, null, ex);

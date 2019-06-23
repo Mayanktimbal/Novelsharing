@@ -24,6 +24,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import javax.imageio.*;
+import javax.servlet.ServletContext;
 
 
 
@@ -79,8 +80,11 @@ public class bstore extends HttpServlet {
              String userid=session.getAttribute("userid").toString();
              String area = session.getAttribute("area").toString();
               
-             databaseconnection db= new databaseconnection();
-             Connection conn=db.connection();
+            Class.forName("com.mysql.jdbc.Driver");
+           ServletContext sc= request.getServletContext();
+         Connection conn = DriverManager.getConnection(sc.getInitParameter("dbrootpath")+"/"+sc.getInitParameter("dbname"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
+           
+        
              
              String Query= "insert into book(bookid,bookname,author,tpage,genre,publisher,bcon,userid,username,eyear,email,mobileno,i1,i2,language,bdesc,area) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
              

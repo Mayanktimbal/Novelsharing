@@ -9,15 +9,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       
         <title>Book details</title>
-               
-  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Navigation.css">
+   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Navigation.css"> 
+           <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/bookshow.css"/> 
    
     </head>
     <body>
         
-             <div class="row" style="margin-left:0px;">
+                  <div class="row" style="margin-left:0px;">
  <div class="navbar">
-     <div class="col-md-6 sm-12">
+     <div class="col-md-4 sm-12">
                       
                     <a href="index.jsp"> <img src="a.png" height="40" width="50"><big>Novel Sharing<big> </a>
                        </div>       
@@ -25,7 +25,7 @@
     
        
             
-     <div  class="col-md-4 sm-12">                  
+     <div  class="col-md-6 sm-12">                  
      <a href="myorder.jsp">Requested</a> 
     <a href="shared.jsp">Share </a>
     <a href="profile.jsp">profile</a>
@@ -59,7 +59,8 @@ else
       
      </div>     </div>          
  
-    </div>  
+    <%-- <li onclick="JavaScript:window.location='signout.jsp';"><a> Logout</a></li> --%>
+  </div>
         
         <%
           String bid= request.getParameter("bookid");

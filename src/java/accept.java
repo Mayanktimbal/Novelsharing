@@ -8,6 +8,7 @@ import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,10 +35,11 @@ public class accept extends HttpServlet {
         HttpSession hs = request.getSession(false);
         String uid = hs.getAttribute("userid").toString();
         String orderid="";
+         Class.forName("com.mysql.jdbc.Driver");
+           ServletContext sc= request.getServletContext();
+           Connection con = DriverManager.getConnection(sc.getInitParameter("dbrootpath")+"/"+sc.getInitParameter("dbname"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
+           
         
-        
-        databaseconnection db = new  databaseconnection();
-        Connection con=db.connection();
         Statement stmt=con.createStatement();
         String buyerbookid = request.getParameter("select");
      

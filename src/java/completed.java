@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,9 +33,11 @@ public class completed extends HttpServlet {
         try {
             String orderid= request.getParameter("orderid");
             PrintWriter out= response.getWriter();
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nosh","root","");
-            Statement stm = conn.createStatement();
+          Class.forName("com.mysql.jdbc.Driver");
+           ServletContext sc= request.getServletContext();
+            Connection conn = DriverManager.getConnection(sc.getInitParameter("dbrootpath")+"/"+sc.getInitParameter("dbname"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
+           
+         Statement stm = conn.createStatement();
           int x= stm.executeUpdate(" update `ordertable` SET orderstatus = 'COMPLETED' , rdate= CURRENT_TIMESTAMP WHERE orderid = '"+orderid+"' ");
           String Query="update book set status='AVAILABLE' where bookid='"+request.getParameter("requesterbookid") +"' ";
        String Query2="update book set status='AVAILABLE' where  bookid='"+request.getParameter("sharerbookid") +"' ";

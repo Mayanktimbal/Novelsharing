@@ -10,16 +10,86 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Book details</title>
-         <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/homepage.css"/>
-  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Navigation.css">
+                        
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Navigation.css"> 
+           <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/bookshow.css"/> 
+           
+           
+                 <link href="${pageContext.request.contextPath}/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="${pageContext.request.contextPath}/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
   
+    <link href="${pageContext.request.contextPath}/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+  
+   
+    <link href="${pageContext.request.contextPath}/css/signup.css" rel="stylesheet" media="all">
+       
     </head>
     <body>
-        <ul>
-        <li onclick="JavaScript:window.location='signout.jsp';"><a> Logout</a></li>
-   <li ><a href="bookupload.jsp">share</a></li>
-      <li ><a href="myorder.html">request</a></li>
-        </ul>
+        
+         <div class="row" style="margin-left:0px;">
+ <div class="navbar">
+     <div class="col-md-4 sm-12">
+                      
+                    <a href="index.jsp"> <img src="a.png" height="40" width="50"><big>Novel Sharing<big> </a>
+                       </div>       
+                
+    
+       
+            
+     <div  class="col-md-6 sm-12">                  
+     <a href="myorder.jsp">Requested</a> 
+    <a href="shared.jsp">Share </a>
+    <a href="profile.jsp">profile</a>
+    <a href="orders.jsp">My order </a>
+                        <%
+      if(session.getAttribute("userid") == null)
+      {
+          out.print("<a href='login.jsp'>Login </a>");
+      
+      }
+else
+      {
+        out.print("<a href='signout.jsp'>Logout </a>");
+      }
+      %>
+      
+  
+     </div><div class="col-md-2 sm-12">
+ <%
+            if(session.getAttribute("userid") == null)
+            {
+         out.println("<a>Hello Guest</a>");
+             }
+            
+            else
+            {
+                 out.println("<a>Hello "+ session.getAttribute("uname") +"</a>");
+            
+            }
+            %>    
+      
+     </div>     </div>          
+ 
+    <%-- <li onclick="JavaScript:window.location='signout.jsp';"><a> Logout</a></li> --%>
+  </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+ 
+   
+
+           
           <%
                   if(session.getAttribute("userid") == null)
                   {
@@ -37,31 +107,75 @@
                                                 String area= session.getAttribute("area").toString();
                                                 String address= session.getAttribute("address").toString();
                                                 %>
-                  
-             
-      <form id="form1" name="mainform" method="POST" action="bstore" enctype="multipart/form-data" >
-<div  id="form">
-
-<h5> Select Book image(First image should be front of book)<h5>
-	Image1:<input type="file" id="file1" name="pic1" accept="image/*" required="required">
-	<br><br>
- Image2:<input type="file" id="file2"  name="pic2" accept="image/*" required="required">
- <br>
- Note:both image should be less than 200kb and in jpg format
-
- <h5 style="display: inline-block;">Book Condition:</h5>
-
- <select id="menu" name="bcon" required="required">
+                                                
+                                                
+                                                
+                                                
+                     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w750">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Book Upload</h2>
+                    <form id="form1" name="mainform" method="POST" action="bstore" enctype="multipart/form-data"  >
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Select Book image(First image should be front of book)</label>
+                                    <input class="input--style-4" type="file" id="file1" name="pic1" accept="image/*" required="required">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                          <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                               <label class="label"> Image2:</label>
+                                    <input class="input--style-4"  type="file" id="file2"  name="pic2" accept="image/*" required="required">
+                                <label class="label">Note:both image should be less than 200kb and in jpg format</label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    
+                        
+                        
+                         <div class="input-group">
+                            <label class="label">Book Condition</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                         
+                                <select id="menu" name="bcon" required="required" >
   <option value="Good" selected="true">Good</option>
   <option value="Medium">Medium</option>
   <option value="Poor">Poor</option>
-</select>
-<br>
 
-
- <h5 style="display: inline-block;">Genre:</h5>
- <select id="genreselection" name="genre" required="required">
- 	 <option disabled selected value> -- SELECT GENRE-- </option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                         </div>
+                        
+                         <br>
+                                <div class="input-group">
+                            <label class="label">Genre</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                         
+                                <select id="genreselection" name="genre" required="required" >
+  <option disabled selected value> -- SELECT GENRE-- </option>
   <option value="LOVE" >ROMANCE</option>
   <option value="ACTION">ACTION & ADVENTURE</option>
   <option value="BIOGRAPHY">BIOGRAPHIES & HISTORY</option>
@@ -74,88 +188,143 @@
          <option value="LITERARY FICTION">LITERARY FICTION</option>
           <option value="NON FICTION">NON-FICTION</option>
            <option value="SCIENCE FICTION">SCIENCE FICTION</option>
-</select>
- 
- <h5 style="display: inline-block;">LANGUAGE:</h5>
- <select id="langselection" name="lang" required="required">
- 	 <option disabled selected value> -- SELECT LANGUAGE-- </option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                                </div>
+                            <br>
+                           
+                        
+                            <div class="input-group">
+                            <label class="label">Language</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                         
+                                <select id="langselection" name="lang" required="required" >
+  <option disabled selected value> -- SELECT LANGUAGE-- </option>
   <option value="ENGLISH" >ENGLISH</option>
   <option value="HINDI">HINDI</option>
   <option value="GUJARATI">GUJARATI</option>
-  
-</select>
- 
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        
+                            </div>
+                            
+                            <br>
+                            
+                              <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Book name</label>
+                                    <input class="input--style-4" type="text" NAME="name" id="bookname" placeholder=" Enter Your bookname..." width="50"  required="required" > 
+                                </div>
+                            </div>
+                            
+                            <br>
+                            
+                              <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Book description</label>
+                                  
+                                     <textarea class="input--style-4" form="form1" name="bdesc"  placeholder=" Entet book description..."  required="required"></textarea>
+                                </div>
+                            </div>
+                        
+                          </div> 
+                            <br>
+                            
+                            
+                          <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Author name</label>
+                                    <input class="input--style-4" type="text" NAME="Author" id="Author" placeholder=" Enter book Author name" width="30"  required="required">
+                                </div>
+                            </div>
+                        
+                          </div>
+                          <br>
+                          
+                          
+                                 <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Publisher</label>
+                                    <input class="input--style-4" type="text" NAME="publisher" id="publisher" placeholder="Publisher" width="30"  required="required">
+                                </div>
+                            </div>
+                        
+                          </div>
+                          
+                          
+                           <br>
+                          
+                          
+                                 <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Edition Year</label>
+                                    <input class="input--style-4" type="text" NAME="Edition" id="Edition" placeholder="Ex: Second edition 2019" width="30"  required="required">
+                                </div>
+                            </div>
+                        
+                          </div>
+                          
+                           <br>
+                           
+                           <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Total Pages</label>
+                                    <input class="input--style-4" type="text" NAME="totalpage" id="totalpage" placeholder="Total pages" width="30"  required="required"  pattern="[0-9]{1,9}">
+                                </div>
+                            </div>
+                        
+                          </div>
+                          
+                           <br>
+                          <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                   
+                                    User Details:
+                                     <label class="label">Username: <%=uname%></label>
+                                      <label class="label">Email: <%=email%></label>
+                                       <label class="label">Phone no.: <%=mono%></label>
+                                       <label class="label">  Area  <%=area%></label>
+                                       <label class="label">Address <%=address%></label>
+                                     </td> 
+                                </div>
+                            </div>
+                        
+                          </div>
+                          
+                        
 
-<br>
-
-
-
-<br>
-
- <h5 style="display: inline-block;">Bookname:</h5>
- <input type="text" NAME="name" id="bookname" placeholder=" Enter Your bookname..." width="30"  required="required"  ><br><br> 
-
- 
-   <h5 style="display: inline-block;">Book description:</h5>
-
- <textarea form="form1" name="bdesc"  placeholder=" Entet book description..."  required="required" ></textarea>
- <br><br> 
- 
-   <h5 style="display: inline-block;">Author name:</h5>
-    <input type="text" NAME="Author" id="Author" placeholder=" Enter book Author name" width="30"  required="required" ><br><br>
-
-    
-      <h5 style="display: inline-block;">Publisher:</h5>
- <input type="text" NAME="publisher" id="publisher" placeholder="Publisher" width="30"  required="required" ><br><br>
-
- <h5 style="display: inline-block;">Edition year:</h5>
- <input type="text" NAME="Edition" id="Edition" placeholder="Ex: Second edition 2019" width="30"  required="required" ><br><br>
-
- 
-   <h5 style="display: inline-block;">Total pages:</h5>
-   <input type="text" NAME="totalpage" id="totalpage" placeholder="Total pages" width="30"  required="required"  pattern="[0-9]{1,9}" ><br><br> 
-   
-<table>
-  					<thead>
-  						<tr>
-  							<td>User details</td>
-  						</tr>
-  					</thead>
-
-  					<tbody id="table_body">
-                                          
-                                               <tr>
-  							<td>Username:</td>
-                                                        <td><%=uname%></td>
-  						</tr>  
-                                                   <tr>
-  							<td>Email:</td>
-                                                        <td><%=email%></td>
-  						</tr>  
-                                                  <tr>
-  							<td>Phone no.:</td>
-                                                        <td><%=mono%></td>
-  						</tr> 
-                                                 <tr>
-  							<td>Area</td>
-                                                        <td><%=area%></td> 
-  						</tr> 
-                                                  <tr>
-  							<td>Address</td>
-                                                        <td><%=address%></td> 
-  						</tr> 
-                                                
-  					</tbody>
- </table>
-
- 
-
-</div>
-                                                <button type="submit" onclick="" >Submit</button>
-</form>      
+                       
+                        <br>
+                          <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                   <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                                  
+                                </div>
+                            </div>
+                        
+                          </div>
+                        
+                             
+                                
+                                
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>   
+                                     
+          
                   
-                  
-                  
-                  
+                
     </body>
 </html>

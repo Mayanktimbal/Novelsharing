@@ -6,6 +6,7 @@ import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,8 +33,10 @@ public class request extends HttpServlet {
             String shareridq = "select userid from book where bookid=\'"+sbookid+"\'";
             
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nosh","root","");
-            Statement stmt = conn.createStatement();
+           ServletContext sc= request.getServletContext();
+           Connection conn = DriverManager.getConnection(sc.getInitParameter("dbrootpath")+"/"+sc.getInitParameter("dbname"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
+           
+         Statement stmt = conn.createStatement();
             
             
             ResultSet rs = stmt.executeQuery(shareridq);
