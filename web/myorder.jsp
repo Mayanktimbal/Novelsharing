@@ -26,8 +26,9 @@
             
             
                  Class.forName("com.mysql.jdbc.Driver");
-                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nosh","root","");
-                 Statement stm = conn.createStatement();
+                   ServletContext sc= request.getServletContext();
+           Connection conn = DriverManager.getConnection(sc.getInitParameter("dbrootpath")+"/"+sc.getInitParameter("dbname"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
+           Statement stm = conn.createStatement();
                  ResultSet rs= stm.executeQuery("select * from book where bid=\""+ session.getAttribute("userid")+"\" and status='WAITING' ");
       
   int x=0;
@@ -39,7 +40,7 @@
             if(x==0)
             {
                 out.println("You haven't requested any novel yet!");
-                out.println("<a href=\"homepage.jsp\">Request Now,Click here!</a>");
+                out.println("<a href=\"index.jsp\">Request Now,Click here!</a>");
             }
             else{
             

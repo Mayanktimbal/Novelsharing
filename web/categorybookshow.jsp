@@ -11,16 +11,66 @@
 <html>
     <head>
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/homepage.css"/>
-       
+                   
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Navigation.css">
            
         <title>Books</title>
     </head>
     <body>
+        <div class="row" style="margin-left:0px;">
+ <div class="navbar">
+     <div class="col-md-6 sm-12">
+                      
+                    <a href="index.jsp"> <img src="a.png" height="40" width="50"><big>Novel Sharing<big> </a>
+                       </div>       
+                
+    
+       
+            
+     <div  class="col-md-4 sm-12">                  
+     <a href="myorder.jsp">Requested</a> 
+    <a href="shared.jsp">Share </a>
+    <a href="profile.jsp">profile</a>
+    <a href="orders.jsp">My order </a>
+                        <%
+      if(session.getAttribute("userid") == null)
+      {
+          out.print("<a href='login.jsp'>Login </a>");
+      
+      }
+else
+      {
+        out.print("<a href='signout.jsp'>Logout </a>");
+      }
+      %>
+      
+  
+     </div><div class="col-md-2 sm-12">
+ <%
+            if(session.getAttribute("userid") == null)
+            {
+         out.println("<a>Hello Guest</a>");
+             }
+            
+            else
+            {
+                 out.println("<a>Hello "+ session.getAttribute("uname") +"</a>");
+            
+            }
+            %>    
+      
+     </div>     </div>          
+ 
+    </div>  
+           
+        
+        
+        
  <%
            Class.forName("com.mysql.jdbc.Driver");
-           Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nosh","root","");
-           String category= request.getParameter("category");
+           ServletContext sc= request.getServletContext();
+           Connection conn = DriverManager.getConnection(sc.getInitParameter("dbrootpath")+"/"+sc.getInitParameter("dbname"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
+              String category= request.getParameter("category");
            Statement stm = conn.createStatement();
            ResultSet rs= stm.executeQuery("select * from book where genre=\""+category +"\" and status='AVAILABLE'");
       
@@ -70,7 +120,7 @@
           out.print("<td rowspan='3'> <img src=\"data:image/jpeg;base64,"+ encode +" \" height=\"100\" width=\"100\" /></td>");
              String url= "generalbookdetails.jsp"+"?bookid="+rs.getString("bookid") ;
  
-          out.print("<td ><a href=\" "+ url + "\">"+rs.getString("bookname")+"</td><td> by "+rs.getString("author")+"</td>");
+          out.print("<td ><a href=\" "+ url + "\">"+rs.getString("bookname")+"</a> by "+rs.getString("author")+"</td>");
              out.print("</tr>");
              
                   out.print("   <tr><td>"+rs.getString("bdesc")+"</td></tr><tr></tr>");

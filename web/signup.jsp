@@ -91,14 +91,18 @@
                                    
  <%
      Class.forName("com.mysql.jdbc.Driver");
-     Connection  conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306","root","");
-String databaseq= "CREATE DATABASE IF NOT EXISTS nosh";
-     Statement stm1= conn1.createStatement();
-stm1.execute(databaseq);
+      ServletContext sc= request.getServletContext();
+  Connection conn1 = DriverManager.getConnection(sc.getInitParameter("dbrootpath"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
+String databaseq= "CREATE DATABASE IF NOT EXISTS "+sc.getInitParameter("dbname");
+Statement stm2= conn1.createStatement();
+stm2.execute(databaseq);
+
      
-       Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nosh","root","");
-String areatableq= "CREATE TABLE IF NOT EXISTS nosh.area (pincode VARCHAR(500) NOT NULL,areaname VARCHAR(500) NOT NULL,PRIMARY KEY(pincode)) ";          
-stm1.execute(areatableq);
+           Connection conn = DriverManager.getConnection(sc.getInitParameter("dbrootpath")+"/"+sc.getInitParameter("dbname"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
+           
+      String areatableq= "CREATE TABLE IF NOT EXISTS "+sc.getInitParameter("dbname")+".area (pincode VARCHAR(500) NOT NULL,areaname VARCHAR(500) NOT NULL,PRIMARY KEY(pincode)) ";          
+Statement stm1= conn.createStatement();
+      stm1.execute(areatableq);
        
        
        

@@ -65,4 +65,23 @@
           30
         </session-timeout>
     </session-config>
+  
+    <context-param>
+        <param-name>dbuser</param-name>
+        <param-value>d1H1cht1cd</param-value>
+    </context-param>
+     <context-param>
+        <param-name>dbpass</param-name>
+        <param-value>2LVHFOqvEC</param-value>
+    </context-param>
+      <context-param>
+        <param-name>dbrootpath</param-name>
+       <!-- <param-value>jdbc:mysql://localhost:3306 </param-value> -->
+       <param-value>jdbc:mysql://remotemysql.com:3306</param-value>
+    </context-param>
+      <context-param>
+        <param-name>dbname</param-name>
+        <param-value>d1H1cht1cd </param-value>
+    </context-param>
+    
 </web-app>

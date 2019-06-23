@@ -50,8 +50,9 @@
         
         <%
                  Class.forName("com.mysql.jdbc.Driver");
-                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nosh","root","");
-                 Statement stm = conn.createStatement();
+                  ServletContext sc= request.getServletContext();
+           Connection conn = DriverManager.getConnection(sc.getInitParameter("dbrootpath")+"/"+sc.getInitParameter("dbname"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
+             Statement stm = conn.createStatement();
                  ResultSet rs= stm.executeQuery("select * from book where userid=\""+ session.getAttribute("userid")+"\" ");
     
   int x=0;

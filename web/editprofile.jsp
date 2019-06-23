@@ -42,7 +42,10 @@
                                                 String area= session.getAttribute("area").toString();
                                                 String address= session.getAttribute("address").toString();
                                                  Class.forName("com.mysql.jdbc.Driver");
-       Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nosh","root","");
+           ServletContext sc= request.getServletContext();
+          
+          Connection conn = DriverManager.getConnection(sc.getInitParameter("dbrootpath")+"/"+sc.getInitParameter("dbname"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
+           
        Statement stm = conn.createStatement();
        ResultSet rs = stm.executeQuery("select * from area");
                                                 %>

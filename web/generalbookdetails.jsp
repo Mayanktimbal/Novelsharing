@@ -14,12 +14,60 @@
    
     </head>
     <body>
+        
+             <div class="row" style="margin-left:0px;">
+ <div class="navbar">
+     <div class="col-md-6 sm-12">
+                      
+                    <a href="index.jsp"> <img src="a.png" height="40" width="50"><big>Novel Sharing<big> </a>
+                       </div>       
+                
+    
+       
+            
+     <div  class="col-md-4 sm-12">                  
+     <a href="myorder.jsp">Requested</a> 
+    <a href="shared.jsp">Share </a>
+    <a href="profile.jsp">profile</a>
+    <a href="orders.jsp">My order </a>
+                        <%
+      if(session.getAttribute("userid") == null)
+      {
+          out.print("<a href='login.jsp'>Login </a>");
+      
+      }
+else
+      {
+        out.print("<a href='signout.jsp'>Logout </a>");
+      }
+      %>
+      
+  
+     </div><div class="col-md-2 sm-12">
+ <%
+            if(session.getAttribute("userid") == null)
+            {
+         out.println("<a>Hello Guest</a>");
+             }
+            
+            else
+            {
+                 out.println("<a>Hello "+ session.getAttribute("uname") +"</a>");
+            
+            }
+            %>    
+      
+     </div>     </div>          
+ 
+    </div>  
+        
         <%
           String bid= request.getParameter("bookid");
          
            Class.forName("com.mysql.jdbc.Driver");
-           Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nosh","root","");
-           Statement stm = conn.createStatement();
+              ServletContext sc= request.getServletContext();
+           Connection conn = DriverManager.getConnection(sc.getInitParameter("dbrootpath")+"/"+sc.getInitParameter("dbname"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
+            Statement stm = conn.createStatement();
            ResultSet rs = stm.executeQuery("select * from book where bookid=" + "\""+bid+"\"" );
           if(rs.next())
           {out.print("<h1>Book Details</h1>");

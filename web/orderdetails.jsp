@@ -19,8 +19,9 @@
         <%
             
                  Class.forName("com.mysql.jdbc.Driver");
-                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nosh","root","");
-                 String orderid =request.getParameter("orderid");
+                   ServletContext sc= request.getServletContext();
+           Connection conn = DriverManager.getConnection(sc.getInitParameter("dbrootpath")+"/"+sc.getInitParameter("dbname"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
+            String orderid =request.getParameter("orderid");
                  Statement stm3 = conn.createStatement();
          ResultSet rs3= stm3.executeQuery("select * from `ordertable` where orderid='"+ orderid+"'");
  if(rs3.next())
