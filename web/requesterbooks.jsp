@@ -16,7 +16,10 @@
            <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/bookshow.css"/> 
   
     </head>
-    <body>
+    <body> <div class="backbutton"  >
+        
+             <input type="image" src="back.png" width="50" height="50" onClick="history.back()"> </input>
+        </div>
          <div class="row" style="margin-left:0px;">
  <div class="navbar">
      <div class="col-md-4 sm-12">

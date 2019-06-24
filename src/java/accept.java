@@ -31,7 +31,7 @@ public class accept extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        out.print("<html> <body bgcolor=cyan>" );
+        out.print("<html> <body >" );
         HttpSession hs = request.getSession(false);
         String uid = hs.getAttribute("userid").toString();
         String orderid="";

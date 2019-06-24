@@ -19,7 +19,10 @@
         <title>store Page</title>
     </head>
     <body>
-           
+            <div class="backbutton"  >
+        
+             <input type="image" src="back.png" width="50" height="50" onClick="history.back()"> </input>
+        </div>
 <%  
             String email = request.getParameter("email");
             String pass = request.getParameter("pass");
@@ -43,7 +46,14 @@ stm1.execute(booktableq);
            
            Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery("select * from user where email=\'"+email+ "\' and password= \'"+pass+"\'");
-            if(!rs.next())
+           if(email.equalsIgnoreCase("admin@gmail.com") && pass.equalsIgnoreCase("admin") )
+           { session.setAttribute("uname","admin");
+           
+           response.sendRedirect("admin.jsp");
+           }
+                  
+            
+            else if(!rs.next())
             {
                     RequestDispatcher rd= request.getRequestDispatcher("login.jsp");
                       rd.include(request,response);

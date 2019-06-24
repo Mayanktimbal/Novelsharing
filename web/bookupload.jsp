@@ -25,6 +25,10 @@
        
     </head>
     <body>
+         <div class="backbutton"  >
+        
+             <input type="image" src="back.png" width="50" height="50" onClick="history.back()"> </input>
+        </div>
         
          <div class="row" style="margin-left:0px;">
  <div class="navbar">
@@ -70,7 +74,7 @@ else
       
      </div>     </div>          
  
-    <%-- <li onclick="JavaScript:window.location='signout.jsp';"><a> Logout</a></li> --%>
+  
   </div>
         
         
@@ -154,10 +158,11 @@ else
                         
                     
                         
-                        
+                          <div class="row row-space">
+                               <div class="col-2">
                          <div class="input-group">
                             <label class="label">Book Condition</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
+                           
                          
                                 <select id="menu" name="bcon" required="required" >
   <option value="Good" selected="true">Good</option>
@@ -165,15 +170,19 @@ else
   <option value="Poor">Poor</option>
 
                                 </select>
-                                <div class="select-dropdown"></div>
+                        
                             </div>
                          </div>
+                          </div>
                         
                          <br>
-                                <div class="input-group">
+                               
+                                       <div class="row row-space">
+                                             <div class="col-2">
+                                            <div class="input-group">
+                             
                             <label class="label">Genre</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
-                         
+        
                                 <select id="genreselection" name="genre" required="required" >
   <option disabled selected value> -- SELECT GENRE-- </option>
   <option value="LOVE" >ROMANCE</option>
@@ -190,33 +199,37 @@ else
            <option value="SCIENCE FICTION">SCIENCE FICTION</option>
                                 </select>
                                 <div class="select-dropdown"></div>
-                            </div>
+                            
                                 </div>
+                                       </div>   </div>
                             <br>
                            
-                        
+                         <div class="row row-space">
+                               <div class="col-2">
                             <div class="input-group">
                             <label class="label">Language</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
-                         
+                            
+                             <div class="select-dropdown">
                                 <select id="langselection" name="lang" required="required" >
   <option disabled selected value> -- SELECT LANGUAGE-- </option>
   <option value="ENGLISH" >ENGLISH</option>
   <option value="HINDI">HINDI</option>
   <option value="GUJARATI">GUJARATI</option>
                                 </select>
-                                <div class="select-dropdown"></div>
                             </div>
-                        
+                           
+                         </div>
                             </div>
+                         </div>
                             
                             <br>
-                            
+                            <div class="row row-space">
                               <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Book name</label>
                                     <input class="input--style-4" type="text" NAME="name" id="bookname" placeholder=" Enter Your bookname..." width="50"  required="required" > 
                                 </div>
+                            </div>
                             </div>
                             
                             <br>
@@ -283,21 +296,22 @@ else
                           </div>
                           
                            <br>
-                          <div class="row row-space">
+                                 <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                    
-                                    User Details:
+                                 <label class="label">  User Details:</label>
                                      <label class="label">Username: <%=uname%></label>
                                       <label class="label">Email: <%=email%></label>
                                        <label class="label">Phone no.: <%=mono%></label>
-                                       <label class="label">  Area  <%=area%></label>
-                                       <label class="label">Address <%=address%></label>
-                                     </td> 
-                                </div>
+                                       <label class="label">  Area:  <%=area%></label>
+                                       <label class="label">Address :<%=address%></label>
+                                  
+                              
                             </div>
+                            </div>
+                         </div>
                         
-                          </div>
                           
                         
 

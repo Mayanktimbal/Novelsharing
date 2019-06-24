@@ -28,7 +28,10 @@
          <title>Shared Novels</title> 
    
     </head>
-    <body>
+    <body> <div class="backbutton"  >
+        
+             <input type="image" src="back.png" width="50" height="50" onClick="history.back()"> </input>
+        </div>
          <div class="row" style="margin-left:0px;">
  <div class="navbar">
      <div class="col-md-4 sm-12">
@@ -160,7 +163,7 @@ if(rs.getString("status").toString().equalsIgnoreCase( "WAITING"))
            {
 
            
-out.println("<td>Requester need it for "+rs2.getString("rdays")+" days</td>");
+out.println("<td>&nbsp&nbsp&nbsp&nbspRequester need it for "+rs2.getString("rdays")+" days</td>");
            }
 out.println("<td><button onclick=\"JavaScript:window.location=' "+url2+" ';\" type='submit' > click to accept</button></td>");
      
@@ -176,6 +179,7 @@ out.print("</tr>");
             }
         
         %>
+       
         
             <script type="text/javascript" src="${pageContext.request.contextPath}/match.js"> </script>
         

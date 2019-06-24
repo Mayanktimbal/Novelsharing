@@ -10,10 +10,14 @@
       
         <title>Book details</title>
    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Navigation.css"> 
-           <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/bookshow.css"/> 
+      <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/bookshow.css"/> 
    
     </head>
     <body>
+         <div class="backbutton"  >
+        
+             <input type="image" src="back.png" width="50" height="50" onClick="history.back()"> </input>
+        </div>
         
                   <div class="row" style="margin-left:0px;">
  <div class="navbar">
@@ -84,7 +88,8 @@ else
           String img1 = Base64.getEncoder().encodeToString(imgData);
           out.print(" <img src=\"data:image/jpeg;base64,"+ img1 +" \" height=\"200\" width=\"200\" />");
             
-          out.print("</td>");
+          out.print("&nbsp&nbsp&nbsp&nbsp</td>");
+         
           out.print("<td>");
              Blob blob2 = rs.getBlob("i2");
              byte[ ] imgData2 = null ;
@@ -139,8 +144,8 @@ else
              out.print(" <form method=\"POST\" action=\"login.jsp\"> ");
               out.print("<input type=\"hidden\" name=\"bid\" value=\""+bid+"\" /> ");
                out.print("For how many days you want? :");
-         out.print("<input type=\"text\" name=\"rdays\" /> ");
-            out.print("<button type=\"submit\" style=\"height:50px; width:100px \" >Request Book</button></form>");
+         out.print("<input type=\"text\" name=\"rdays\" required=\"required\" /> ");
+            out.print("<button type=\"submit\" style=\"height:50px;  \"  >Request Book</button></form>");
         
             }
             else{
@@ -151,8 +156,8 @@ else
                  out.print(" <form method=\"POST\" action=\"request\"> ");
               out.print("<input type=\"hidden\" name=\"bid\" value=\""+bid+"\" /> ");
                out.print("For how many days you want? :");
-         out.print("<input type=\"text\" name=\"rdays\" />");
-            out.print("<button type=\"submit\" style=\"height:50px; width:50px \" >Request Book</button></form>");
+         out.print("<input type=\"text\" name=\"rdays\" required=\"required\"  />");
+            out.print("<button type=\"submit\" style=\"height:50px;  \" >Request Book</button></form>");
             }
             }
             

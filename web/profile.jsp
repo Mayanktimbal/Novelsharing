@@ -17,7 +17,10 @@
 
     
     
-    <body>
+    <body> <div class="backbutton"  >
+        
+             <input type="image" src="back.png" width="50" height="50" onClick="history.back()"> </input>
+        </div>
         
              <%
                   

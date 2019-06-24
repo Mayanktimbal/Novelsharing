@@ -18,7 +18,10 @@
             
         <title>Books</title>
     </head>
-    <body>
+    <body>  <div class="backbutton"  >
+        
+             <input type="image" src="back.png" width="50" height="50" onClick="history.back()"> </input>
+        </div>
            <div class="row" style="margin-left:0px;">
  <div class="navbar">
      <div class="col-md-4 sm-12">
@@ -99,7 +102,7 @@ else
             else{
             
                 rs.first();
-               out.println("<table id=\"books\" name=\"books\">"); 
+               out.println(" <table id=\"books\" name=\"books\" width='70px' cellspacing=\"50px\" >"); 
            
                
         
@@ -122,13 +125,14 @@ else
           out.println("<tr>"); 
           out.print("<td rowspan='3'> <img src=\"data:image/jpeg;base64,"+ encode +" \" height=\"100\" width=\"100\" /></td>");
              String url= "generalbookdetails.jsp"+"?bookid="+rs.getString("bookid") ;
- 
+         out.print("<td rowspan='3'>&nbsp&nbsp&nbsp</td>");
           out.print("<td ><a href=\" "+ url + "\">"+rs.getString("bookname")+"</a> by "+rs.getString("author")+"</td>");
              out.print("</tr>");
              
                   out.print("   <tr><td>"+rs.getString("bdesc")+"</td></tr><tr></tr>");
           
-   
+     out.print("  </table>");
+          
 
 }while(rs.next());
  
@@ -137,8 +141,9 @@ else
         
         %>
          
-     
-        </table>
+        <br><br><br>  <br><br><br>  <br><br><br>  <br><br><br>
+         <br><br><br> <br><br><br>
+        
           <%@include file="footer.jsp" %>  
           </div>
               </body>

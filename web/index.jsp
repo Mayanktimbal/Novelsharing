@@ -16,20 +16,23 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    
           <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Navigation.css"> 
-           <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/bookshow.css"/> 
-              
-       
+                       <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/bookshow.css"/> 
 
 
-<title>Homepage</title>
-          
-    </head>
-    <body>
+
+
+            <title>Homepage</title>
+
+                </head>
+                <body>
     
                   
 
 
+         <div class="backbutton"  >
         
+             <input type="image" src="back.png" width="50" height="50" onClick="history.back()"> </input>
+        </div>
         
         <div class="row" style="margin-left:0px;">
  <div class="navbar">
