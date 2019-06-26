@@ -4,7 +4,6 @@ It is Web Application to exchange Novels.
 
 ## Tech Stack
 - Java
-- Android SDK
 -	Servlet
 -	JSP
 -	CSS
@@ -18,7 +17,8 @@ It is Web Application to exchange Novels.
 <table>
   <tr>
  <td><img height="500" width="500" src="https://i.ibb.co/9hbYVJv/Screenshot-26.png" /><center><b>Login Page</b></center></td>
-   <td><img height="500" width="500" src="https://images-na.ssl-images-amazon.com/images/I/61Y61edUQuL.png" /><br /><center><b>Currently Playing Notification</b></center></td>
+     </tr>
+  <tr>  <td><img height="500" width="500" src="https://images-na.ssl-images-amazon.com/images/I/61Y61edUQuL.png" /><br /><center><b>Currently Playing Notification</b></center></td>
     
 </tr>
  <tr>
