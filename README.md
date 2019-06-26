@@ -16,7 +16,7 @@ It is Web Application to exchange Novels.
 ## Screenshots
 <table>
   <tr>
- <td><img height="500" width="500" src="https://i.ibb.co/9hbYVJv/Screenshot-26.png" /><center><b>Login Page</b></center></td>
+ <td><img height="500" width="1000" src="https://i.ibb.co/9hbYVJv/Screenshot-26.png" /><center><b>Login Page</b></center></td>
      </tr>
   <tr>  <td><img height="500" width="500" src="https://images-na.ssl-images-amazon.com/images/I/61Y61edUQuL.png" /><br /><center><b>Currently Playing Notification</b></center></td>
     
