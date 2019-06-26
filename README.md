@@ -32,11 +32,11 @@ It is Web Application to exchange Novels.
 </table>
 
 ## Project By-
-#Mayank Timbal
-(Information Technology Student)(enroll no. 16028011604 in GTU)<br>
+Mayank Timbal
+(B.E I.T Student enroll. no. 16028011604 in GTU)<br>
 Ramu Rabari
-(Information Technology Student)(enroll no. 160280116078 in GTU)<br>
+(B.E I.T Student enroll. no. 160280116078 in GTU)<br>
 Bhavdip Jamod
-(Information Technology Student)(enroll no. 160280116031 in GTU)<br>
+(B.E I.T Student enroll. 160280116031 in GTU)<br>
 
 
