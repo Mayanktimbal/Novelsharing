@@ -71,7 +71,7 @@ else
         
         
         
-        <h1> <center>  Novel Sharing </center></h1>
+       
         <%
             
                if(session.getAttribute("userid") == null)

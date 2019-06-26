@@ -102,7 +102,7 @@ else
             else{
             
                 rs.first();
-               out.println(" <table id=\"books\" name=\"books\" width='70px' cellspacing=\"50px\" >"); 
+               out.println(" <table id=\"books\" name=\"books\" >"); 
            
                
         

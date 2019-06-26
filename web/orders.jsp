@@ -13,7 +13,8 @@
            <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/bookshow.css"/> 
     
     </head>
-    <body> <div class="backbutton"  >
+    <body>
+           <div class="backbutton"  >
         
              <input type="image" src="back.png" width="50" height="50" onClick="history.back()"> </input>
         </div>
@@ -69,7 +70,7 @@ else
         
         
         
-        <h1> Your Orders </h1>
+        <h1> <center> <mark> Your Orders </mark></center> </h1>
         <h2> Running Order </h2>
         
      <%
@@ -88,10 +89,10 @@ else
                  
                  
                  //for requested by user and showing sharer id
-       out.print( "<h5> requested orders </h5>");
+       out.print( "<h4>   <pre>     Requested orders</pre> </h4>");
         ResultSet rrequested= stm.executeQuery("select * from `ordertable` where reqid=\""+ session.getAttribute("userid")+"\" and orderstatus='ACCEPTED' ");    
        if(!rrequested.next())
-              out.println("<p> currently no order from requester side</p>");
+              out.println("<p> Currently no order from requester side</p>");
        else{
              rrequested.first();
        
@@ -105,9 +106,7 @@ else
                 {
                 
                out.println("<table id=\"books\" name=\"books\">"); 
-               out.println("<tr >"); 
-               out.print("<td> bookname</td> <td> images</td><td>Status</td></tr>");
-     
+                    
           
            out.println("<tr>"); 
            
@@ -138,11 +137,11 @@ out.print("</table>");
         
 
         //for shared by user and showing buyer book id
-        out.print( "<h5> shared orders </h5>");
+        out.print( "<h4> <pre>     Shared orders</pre></h4>");
         Statement stm3 = conn.createStatement();
         ResultSet rshared= stm3.executeQuery("select * from `ordertable` where sid=\""+ session.getAttribute("userid")+"\" and orderstatus='ACCEPTED' ");    
         if(!rshared.next())   
-               out.print("<p>currently no order from your side </p>");
+               out.print("<p>Currently no order from your side </p>");
         else{
             rshared.first();
          
@@ -155,8 +154,7 @@ out.print("</table>");
                 {
                 
                out.println("<table id=\"books\" name=\"books\">"); 
-               out.println("<tr >"); 
-               out.print("<td> bookname</td> <td> images</td></tr>");
+               
     
           
            out.println("<tr>"); 
@@ -187,16 +185,15 @@ out.print("</tr>");
         // for completed orders
       out.print( "<h2> Completed orders </h2>");
  //for requested by user and showing sharer book
- out.print( "<h5> requested orders </h5>");
+ out.print( "<h4><pre>     Requested orders</pre> </h4>");
             Statement stm5 = conn.createStatement();
         ResultSet crequested= stm5.executeQuery("select * from `ordertable` where reqid=\""+ session.getAttribute("userid")+"\" and orderstatus='COMPLETED' or orderstatus='DENIED' ");    
        if(!crequested.next())    
-            out.print("<p>currently no completed order</p>");
+            out.print("<p>Currently no order from requester side</p>");
        else{ 
                crequested.first();
               out.println("<table id=\"books\" name=\"books\">"); 
-               out.println("<tr >"); 
-               out.print("<td> bookname</td> <td> images</td></tr>");
+              
     
        
        do
@@ -237,11 +234,11 @@ out.print("</tr>");
         
 
  //for shared by user and showing buyer bookid
- out.print( "<h5> shared orders </h5>");
+ out.print( "<h4><pre>     Shared orders</pre> </h>");
          Statement stm7 = conn.createStatement();
         ResultSet cshared= stm7.executeQuery("select * from `ordertable` where sid=\""+ session.getAttribute("userid")+"\" and orderstatus='COMPLETED'  ");    
        if(!cshared.next())
-           out.print("<p>currently no comleted order from your side </p>");
+           out.print("<p>Currently no order from your side </p>");
        else{
           cshared.first();
         do
@@ -253,8 +250,7 @@ out.print("</tr>");
                 {
                 
                out.println("<table id=\"books\" name=\"books\">"); 
-               out.println("<tr >"); 
-               out.print("<td> bookname</td> <td> images</td></tr>");
+             
     
           
            out.println("<tr>"); 

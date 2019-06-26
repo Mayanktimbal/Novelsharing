@@ -138,7 +138,7 @@ else
                           <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                               <label class="label"> Image2:</label>
+                               <label><small>&nbsp&nbsp Image2:</small></label>
                                     <input class="input--style-4"  type="file" id="file2"  name="pic2" accept="image/*" required="required">
                                 <label class="label">Note:both image should be less than 200kb and in jpg format</label>
                                 </div>
@@ -149,10 +149,18 @@ else
                                 </div>
                             </div>
                         </div>
+                        <br>
+                        <div class="row row-space">
+                              <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Book name</label>
+                                    <input class="input--style-4" type="text" NAME="name" id="bookname" placeholder=" Enter Your bookname..." width="50"  required="required" > 
+                                </div>
+                            </div>
+                            </div>
+                            
                         
-                        
-                        
-                        
+                        <br>
                         
                         
                         
@@ -164,16 +172,16 @@ else
                             <label class="label">Book Condition</label>
                            
                          
-                                <select id="menu" name="bcon" required="required" >
-  <option value="Good" selected="true">Good</option>
+  <select id="menu" name="bcon" required="required" >
+  <option disabled selected value> -- SELECT CONDITION-- </option>
+  <option value="Good">Good</option>
   <option value="Medium">Medium</option>
   <option value="Poor">Poor</option>
-
-                                </select>
+</select>
                         
-                            </div>
                          </div>
-                          </div>
+                         </div>
+                         </div>
                         
                          <br>
                                
@@ -201,7 +209,8 @@ else
                                 <div class="select-dropdown"></div>
                             
                                 </div>
-                                       </div>   </div>
+                                </div>   
+                                 </div>
                             <br>
                            
                          <div class="row row-space">
@@ -223,14 +232,6 @@ else
                          </div>
                             
                             <br>
-                            <div class="row row-space">
-                              <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Book name</label>
-                                    <input class="input--style-4" type="text" NAME="name" id="bookname" placeholder=" Enter Your bookname..." width="50"  required="required" > 
-                                </div>
-                            </div>
-                            </div>
                             
                             <br>
                             

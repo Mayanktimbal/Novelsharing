@@ -52,8 +52,8 @@ public class bstore extends HttpServlet {
              
             Part p1=request.getPart("pic1");
              Part p2=request.getPart("pic2");
-      BufferedImage im1= ImageIO.read(p1.getInputStream());
-      BufferedImage im2= ImageIO.read(p2.getInputStream()); 
+      BufferedImage im1 = ImageIO.read( p1.getInputStream());
+      BufferedImage im2 = ImageIO.read( p2.getInputStream()); 
        /* BufferedImage resizedImage1= new BufferedImage(50,50,TYPE_INT_RGB);
         Graphics2D g= resizedImage1.createGraphics();
         g.drawImage(im1, 0, 0,50,50,null);

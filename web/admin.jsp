@@ -14,10 +14,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Navigation.css"> 
+                       <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/bookshow.css"/> 
+
+
         <title>Admin Page</title>
     </head>
     <body>
+        
+        <div class="row" style="margin-left:0px;">
+ <div class="navbar">
+     <div class="col-md-4 sm-12">
+                      
+                    <a href="index.jsp"> <img src="a.png" height="40" width="50"><big>Novel Sharing<big> </a>
+                       </div>           
+       </div>          
+ 
+  
+  </div>
         <% if(!session.getAttribute("uname").toString().equalsIgnoreCase("admin"))
         {
              
@@ -31,8 +45,8 @@
            Connection conn = DriverManager.getConnection(sc.getInitParameter("dbrootpath")+"/"+sc.getInitParameter("dbname"),sc.getInitParameter("dbuser"),sc.getInitParameter("dbpass"));
              Statement stm = conn.createStatement();
                  ResultSet rs= stm.executeQuery("select * from ordertable order by odate DESC ");
-                    out.print("<table>");
-                    out.print("<tr><td>sharer</td><td>requester</td> <td>sharerbookid </td><td>reqbookid</td><td>order date</td><td>return daye</td><td>Sharer remark</td><td>Order Status</td></tr>");
+                    out.print("<table border=1>");
+                    out.print("<tr><td>sharer</td><td>requester</td> <td>sharerbook </td><td>reqbook</td><td>order date</td><td>return date</td><td>return days</td><td>Sharer remark</td><td>Order Status</td></tr>");
    
 
    while(rs.next())
@@ -41,7 +55,7 @@
     ResultSet rs2 = stm2.executeQuery( "select * from user where userid=\'"+rs.getString("sid")+"\' ");        
     while(rs2.next())
      {
-    out.print("<tr><td>"+rs2.getString("username")+"<td>");
+    out.print("<tr><td>"+rs2.getString("username")+"</td>");
    // out.print("<tr><td>"+rs2.getString("username")+"<td></tr>");
     }
     
@@ -49,7 +63,7 @@
     ResultSet rs3 = stm3.executeQuery( "select * from user where userid=\'"+rs.getString("reqid")+"\' ");        
     while(rs3.next())
      {
-    out.print("<td>"+rs3.getString("username")+"<td>");
+    out.print("<td>"+rs3.getString("username")+"</td>");
    // out.print("<tr><td>"+rs2.getString("username")+"<td></tr>");
     }
     
@@ -57,7 +71,7 @@
     ResultSet rs4 = stm4.executeQuery( "select * from book where bookid=\'"+rs.getString("sbookid")+"\' ");        
     while(rs4.next())
      {
-    out.print("<td>"+rs4.getString("bookname")+"<td>");
+    out.print("<td>"+rs4.getString("bookname")+"</td>");
   
     }
     
@@ -65,43 +79,43 @@
     ResultSet rs5 = stm5.executeQuery( "select * from book where bookid=\'"+rs.getString("reqbookid")+"\' ");        
   if(rs5.next())
   {
-        out.print("<td>"+rs5.getString("bookname")+"<td>");
+        out.print("<td>"+rs5.getString("bookname")+"</td>");
   }
 else
   {
-       out.print("<td>"+"not Selected"+"<td>");
+       out.print("<td>"+"not Selected"+"</td>");
   }
     
     
     
-        out.print("<td>"+rs.getString("odate")+"<td>");
+        out.print("<td>"+rs.getString("odate")+"</td>");
         
     String s= rs.getString("rdate");
     
  if(s == null)      
   {
-        out.print("<td>"+"Not returned"+"<td>");
+        out.print("<td>"+"Not returned"+"</td>");
   }
 else
   {
-       out.print("<td>"+rs.getString("rdate")+"<td>");
+       out.print("<td>"+rs.getString("rdate")+"</td>");
   }
 
         
 
-        out.print("<td>"+rs.getString("rdays")+"<td>");
+        out.print("<td>"+rs.getString("rdays")+"</td>");
         
         if( rs.getString("sremark") == null)      
   {
-        out.print("<td>"+"Not REMARKED"+"<td>");
+        out.print("<td>"+"Not REMARKED"+"</td>");
   }
 else
   {
-       out.print("<td>"+rs.getString("sremark")+"<td>");
+       out.print("<td>"+rs.getString("sremark")+"</td>");
   }
          
          
-         out.print("<td>"+rs.getString("orderstatus")+"<td></tr>");
+         out.print("<td>"+rs.getString("orderstatus")+"</td></tr>");
  
     }
         %>
