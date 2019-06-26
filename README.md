@@ -1,6 +1,9 @@
 # NovelSharing
 It is Web Application to exchange Novels.
 
+# Purpose
+The main purpose of developing this system is to provide online book exchange system with web application. One does not need to pay money each and every time while exchanging book.
+
 
 ## Tech Stack
 -  Java
