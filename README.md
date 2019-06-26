@@ -17,7 +17,7 @@ It is Web Application to exchange Novels.
 ## Screenshots
 <table>
   <tr>
- <td><img height="500" width="500" src="https://images-na.ssl-images-amazon.com/images/I/81cFaBdIJML.png" /><br /><center><b>Home Screen</b></center></td>
+ <td><img height="500" width="500" src="https://ibb.co/ZSBTY3J" /><br /><center><b>Login Page</b></center></td>
    <td><img height="500" width="500" src="https://images-na.ssl-images-amazon.com/images/I/61Y61edUQuL.png" /><br /><center><b>Currently Playing Notification</b></center></td>
     
 </tr>
@@ -39,4 +39,7 @@ Ramu Rabari
 Bhavdip Jamod
 (B.E I.T Student enroll. 160280116031 in GTU)<br>
 
+
+## References
+genre photos and genre theme is taken from https://manybooks.net
 
