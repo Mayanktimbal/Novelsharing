@@ -21,14 +21,14 @@ Netbeans IDE 8.2
 
   <tr></tr> <tr></tr>
 <tr>
-    <center><b>Login Page</b></center>
+  <td> <center><b>Login Page</b></center></td>
   </tr>
   <tr>
  <td><img height="500" width="1000" src="https://i.ibb.co/JqvkyNd/Screenshot-26.png" /></td>
      </tr>
  <br><br><br>
   <tr>
-    <center><b>Home Page</b></center>
+  <td>  <center><b>Home Page</b></center></td>
   </tr>
   
    <tr>
@@ -36,7 +36,7 @@ Netbeans IDE 8.2
      </tr>
     <br><br><br>
   <tr>
-    <center><b>Book Upload</b></center>
+  <td><center><b>Book Upload</b></center></td>
   </tr>
   
    <tr>
@@ -44,7 +44,7 @@ Netbeans IDE 8.2
      </tr>
    <br><br><br>
   <tr>
-    <center><b>Available books in Action genre</b></center>
+  <td><center><b>Available books in Action genre</b></center></td>
   </tr>
   
    <tr>
@@ -52,7 +52,7 @@ Netbeans IDE 8.2
      </tr>
      <br><br><br>
   <tr>
-    <center><b>Request book</b></center>
+  <td><center><b>Request book</b></center></td>
   </tr>
   
    <tr>
