@@ -3,7 +3,7 @@ It is Web Application to exchange Novels.
 
 
 ## Tech Stack
-- Java
+-  Java
 -	Servlet
 -	JSP
 -	CSS
@@ -12,31 +12,54 @@ It is Web Application to exchange Novels.
 -	Glassfish Server
 
 
+## IDE
+Netbeans IDE 8.2
+
 
 ## Screenshots
 <table>
+
+  <tr></tr> <tr></tr>
+<tr>
+    <center><b>Login Page</b></center>
+  </tr>
   <tr>
  <td><img height="500" width="1000" src="https://i.ibb.co/JqvkyNd/Screenshot-26.png" /></td>
      </tr>
-  
+ <br><br><br>
   <tr>
-    <center><b>Login Page</b></center>
+    <center><b>Home Page</b></center>
   </tr>
   
    <tr>
  <td><img height="500" width="1000" src="https://i.ibb.co/gPHg84s/Screenshot-25.png" /></td>
      </tr>
-     <tr></tr> <tr></tr> 
-   <tr><td>  <center><b>Login Page</b></center></td></tr>
+    <br><br><br>
+  <tr>
+    <center><b>Book Upload</b></center>
+  </tr>
   
-  <tr>  <td><img height="500" width="500"  /><br /><center><b>Currently Playing Notification</b></center></td>
-    
-</tr>
- <tr>
- <td><img height="500" width="300" src="https://images-na.ssl-images-amazon.com/images/I/81Mej7sMbeL._SY600_.png" /><br /><center><b>Playing Screen</b></center></td>
+   <tr>
+ <td><img height="500" width="1000" src="https://i.ibb.co/HgBhGDL/Screenshot-38.png" /></td>
+     </tr>
+   <br><br><br>
+  <tr>
+    <center><b>Available books in Action genre</b></center>
+  </tr>
+  
+   <tr>
+ <td><img height="500" width="1000" src="https://i.ibb.co/CWGWNbz/Screenshot-39.png" /></td>
+     </tr>
+     <br><br><br>
+  <tr>
+    <center><b>Request book</b></center>
+  </tr>
+  
+   <tr>
+ <td><img height="500" width="1000" src="https://i.ibb.co/93VHtsV/Screenshot-40.png" /></td>
+     </tr>
+  
 
-    
-</tr>
     
 
     
@@ -53,4 +76,6 @@ Bhavdip Jamod
 
 ## References
 genre photos and genre theme is taken from https://manybooks.net
+
+
 
