@@ -68,16 +68,16 @@
   
     <context-param>
         <param-name>dbuser</param-name>
-        <param-value>d1H1cht1cd</param-value>
+        <param-value></param-value>
     </context-param>
      <context-param>
         <param-name>dbpass</param-name>
-        <param-value>rF1LJhB0zI</param-value>
+        <param-value></param-value>
     </context-param>
       <context-param>
         <param-name>dbrootpath</param-name>
-      <!-- <param-value>jdbc:mysql://localhost:3306 </param-value> -->
-        <param-value>jdbc:mysql://remotemysql.com:3306</param-value>
+ <param-value>jdbc:mysql://localhost:3306 </param-value>
+        
     </context-param>
       <context-param>
         <param-name>dbname</param-name>
